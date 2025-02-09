@@ -11,8 +11,38 @@ class Main{
     }
     return -1;
   }
+  static int getSecondLargest2(int[] arr){
+    int n = arr.length;
+    int largest = -1,secondLargest = -1;
+    for(int i = 0;i<n;i++){
+      if(arr[i]>largest)
+        largest = arr[i];
+    }
+    for(int i = 0;i<n;i++){
+      if(arr[i] > secondLargest && arr[i] != largest){
+        secondLargest = arr[i];
+      }
+    }
+    return secondLargest;
+  }
+  static int getSecondLargest3(int[] arr){
+    int n = arr.length;
+    int larg =-1,slarg =-1;
+    for(int i = 0;i<n ;i++){
+      if(arr[i]>larg){
+        slarg = larg;
+        larg = arr[i];
+      }
+      else if (arr[i] < larg && arr[i]>slarg){
+        slarg = arr[i];
+      }
+    }
+    return slarg;
+  }
   public static void main (String[] args) {
-    int[] arr = {23,68,20,10};
-    System.out.println(secondLargest(arr));
+    int[] arr = {20,49,1,34,2,33,05};
+    System.out.println(getSecondLargest(arr));
+    System.out.println(getSecondLargest3(arr));
+    System.out.println(getSecondLargest2(arr));
   }
 }
