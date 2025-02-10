@@ -14,6 +14,12 @@ class Main{
       }
       return true;
     }
+static boolean arrSortorNot(int arr[],int n){
+    if(n==0||n==1){
+      return true;
+    }
+    return arr[n-1] >= arr[n-2] && arrSortorNot(arr,n-1)
+  }
     public static void main(String arg[]){
       int[] arr = {20,30,49,59,65,67,78,90};
       if(checkSortorNot(arr)){
