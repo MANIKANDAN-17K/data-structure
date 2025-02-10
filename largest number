@@ -1,0 +1,41 @@
+import java.io.*;
+import java.util.*;
+
+class GfG {
+
+    static int largest(int[] arr) {
+        Arrays.sort(arr);
+        return arr[arr.length - 1];
+    }
+     static int findMax(int[] arr, int i) {
+      
+
+        if (i == arr.length - 1) {
+            return arr[i];
+        }
+
+        int recMax = findMax(arr, i + 1);
+
+        return Math.max(recMax, arr[i]);
+    }
+
+    static int recursionLargest(int[] arr) {
+        return findMax(arr, 0);
+    }
+    static int iterativeLargest(int[] arr) {
+        int max = arr[0];
+
+        for (int i = 1; i < arr.length; i++)
+            if (arr[i] > max)
+                max = arr[i];
+
+        return max;
+    }
+
+    static public void main(String[] args) {
+        int[] arr = { 10, 324, 45, 90, 9808 };
+        System.out.println("using library"+largest(arr));
+         System.out.println("using iterative"+iterativeLargest(arr));
+          System.out.println("using recursion"+recursionLargest(arr));
+    }
+}
