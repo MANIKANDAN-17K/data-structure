@@ -1,0 +1,17 @@
+import java.util.ArrayList;
+import java.util.HashSet;
+class Main{
+  static ArrayList<Integer> findDistinct(int[] arr){
+   HashSet<Integer> st = new HashSet<>();
+   for(int num : arr){
+     st.add(num);
+   }
+   return new ArrayList<>(st);
+  }
+  public static void main (String[] args) {
+    int arr[] = {1,2,3,4,5,34,12,34,45,11};
+    ArrayList<Integer> res = findDistinct(arr);
+ System.out.println(res);
+    
+  }
+}
