@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+ikimport java.util.ArrayList;
 public class GenerateSubArray{
   static void subArray(ArrayList<Integer> arr){
     int n = arr.size();
